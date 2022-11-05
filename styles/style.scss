@@ -26,6 +26,8 @@ main{
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 2rem;
+    transition: 0.25s ease-in-out all;
+    max-width: 375px;
 
     .input-section{
         display: flex;
@@ -36,13 +38,47 @@ main{
         margin-bottom: 2rem;
 
         #input-place{
-            border: none;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 10px;
+            flex: 1 auto;
+            font-family: inherit;
             outline: none;
+            padding: .5rem .5rem;
+
+            &::placeholder{
+                color: rgb(46, 46, 46);
+                font-family: inherit;
+                font-size: .9rem;
+            }
         }
+
+        #btn{
+            background-color: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: .8rem;
+            outline: none;
+            padding: .5rem .55rem;
+        }
+
     }
 
     .main-info-section{
         max-width: 375px;
+
+        .info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .desc-wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
 
         h2{
             font-family: 'Roboto Slab', serif;
@@ -63,6 +99,11 @@ main{
     
         span{
             display: block;
+            margin-bottom: .325rem;
+        }
+
+        span:last-of-type{
+            margin-bottom: 0;
         }
     }
 }

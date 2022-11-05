@@ -29,6 +29,8 @@ main {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 2rem;
+  transition: 0.25s ease-in-out all;
+  max-width: 375px;
 }
 main .input-section {
   display: flex;
@@ -38,11 +40,50 @@ main .input-section {
   margin-bottom: 2rem;
 }
 main .input-section #input-place {
-  border: none;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  flex: 1 auto;
+  font-family: inherit;
   outline: none;
+  padding: 0.5rem 0.5rem;
+}
+main .input-section #input-place::-moz-placeholder {
+  color: rgb(46, 46, 46);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+main .input-section #input-place:-ms-input-placeholder {
+  color: rgb(46, 46, 46);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+main .input-section #input-place::placeholder {
+  color: rgb(46, 46, 46);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+main .input-section #btn {
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  outline: none;
+  padding: 0.5rem 0.55rem;
 }
 main .main-info-section {
   max-width: 375px;
+}
+main .main-info-section .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .main-info-section .info .desc-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 main .main-info-section h2 {
   font-family: "Roboto Slab", serif;
@@ -57,4 +98,8 @@ main .addtional-info-section span:first-of-type {
 }
 main .addtional-info-section span {
   display: block;
+  margin-bottom: 0.325rem;
+}
+main .addtional-info-section span:last-of-type {
+  margin-bottom: 0;
 }/*# sourceMappingURL=style.css.map */
