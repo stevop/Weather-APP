@@ -11,7 +11,7 @@
 <body>
     <main class="container">
         <section class="input-section">
-            <input id="input-place" type="text" placeholder="Zadaj mesto" autocomplete="off">
+            <input onchange="setTimeout(onEnter, 800)" oninput="setTimeout(onEnter, 800)" id="input-place" type="text" placeholder="Zadaj mesto" autocomplete="off">
             <button id="btn">
                 <i class='bx bx-search-alt'></i>
             </button>
