@@ -77,6 +77,10 @@ main{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
+                .desc-text{
+                    font-weight: 600;
+                }
             }
         }
 

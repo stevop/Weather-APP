@@ -85,6 +85,9 @@ main .main-info-section .info .desc-wrapper {
   justify-content: center;
   align-items: center;
 }
+main .main-info-section .info .desc-wrapper .desc-text {
+  font-weight: 600;
+}
 main .main-info-section h2 {
   font-family: "Roboto Slab", serif;
   font-size: 1.325rem;

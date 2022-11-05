@@ -57,8 +57,19 @@ inputPlace.addEventListener("keypress", async (e) => {
         return
     }
     else{
+        descIcon.src = "";
+        descText.textContent = "";
+
         h2.textContent = "Lokalita nebola nájdená.";
         h2.style.fontSize = "1.5rem";
+        temp.textContent = "";
+        maxTemp.textContent = "";
+        minTemp.textContent = "";
+        feelsLike.textContent = "";
+        humidity.textContent = "";
+        pressure.textContent = "";
+        windSpeed.textContent = "";
+        rain.textContent = "";
+        snow.textContent = "";
     }
-
 });
