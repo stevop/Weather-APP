@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Počasie</title>
+</head>
+<body>
+    <main class="container">
+        <section class="input-section">
+            <input id="input-place" type="text" placeholder="Zadaj mesto" autocomplete="off">
+            <button id="btn">
+                <i class='bx bx-search-alt'></i>
+            </button>
+        </section>
+
+        <section class="main-info-section">
+            <h2>Aktuálna teplota pre mesto:<br>
+                <span class="place">Snina</span>
+            </h2>
+            <h1 class="temperature">12°C</h1>
+        </section>
+
+        <section class="addtional-info-section">
+            <span class="max-temp">Maximálna teplota: 13°C</span>
+            <span class="min-temp">Minimálna teplota: 11°C</span>
+            <span class="feels-like">Pocitová teplota: 13</span>
+            <span class="humidity">Vlhkosť vzduchu: 58%</span>
+            <span class="pressure">Tlak vzduchu: 1000</span>
+            <span class="wind-speed">Rýchlosť vetra: 2.83 km/h</span>
+        </section>
+
+        
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
