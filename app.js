@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     // FETCHING DATA
     async function fetchData(city){
         // first i find latitude and longitude:
-        const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=88e243d6b12dd013c3c5352a08400b75`);
+        const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`);
         let lat = res.data[0].lat;
         let lon = res.data[0].lon;
         
