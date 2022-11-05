@@ -25,7 +25,7 @@ async function fetchData(city){
     return actualRes.data;
 };
 
-// vytvorím funkciu, kt. na Enter fetchne data, kt. sme napísali do inputu:
+// INPUT:
 inputPlace.addEventListener("keypress", async (e) => {
     
     if(e.key === "Enter" && e.target.value !== ""){
@@ -74,6 +74,7 @@ inputPlace.addEventListener("keypress", async (e) => {
     }
 });
 
+// BUTTON
 btn.addEventListener("click", async (e) => {
     if(fetchData(inputPlace.value) !== ""){
         let placeInfo = await fetchData(inputPlace.value);
