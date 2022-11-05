@@ -3,7 +3,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 
 body{
-    background-color: dimgray;
+    background-image: url(../assets/img.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -19,8 +19,12 @@ body{
 }
 
 main{
-    background-color: white;
-    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 2rem;
 
     .input-section{
@@ -30,20 +34,33 @@ main{
         gap: 1rem;
 
         margin-bottom: 2rem;
+
+        #input-place{
+            border: none;
+            outline: none;
+        }
     }
 
     .main-info-section{
+        max-width: 375px;
+
         h2{
             font-family: 'Roboto Slab', serif;
+            font-size: 1.325rem;
         }
 
-        h1{
+        .temp{
             font-family: 'Roboto Slab', serif;
             font-size: 3rem;
         }
     }
 
     .addtional-info-section{
+        
+        span:first-of-type{
+            margin-top: 1rem;
+        }
+    
         span{
             display: block;
         }

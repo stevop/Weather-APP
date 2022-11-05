@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: dimgray;
+  background-image: url(../assets/img.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -22,8 +22,12 @@ body {
 }
 
 main {
-  background-color: white;
-  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 2rem;
 }
 main .input-section {
@@ -33,12 +37,23 @@ main .input-section {
   gap: 1rem;
   margin-bottom: 2rem;
 }
+main .input-section #input-place {
+  border: none;
+  outline: none;
+}
+main .main-info-section {
+  max-width: 375px;
+}
 main .main-info-section h2 {
   font-family: "Roboto Slab", serif;
+  font-size: 1.325rem;
 }
-main .main-info-section h1 {
+main .main-info-section .temp {
   font-family: "Roboto Slab", serif;
   font-size: 3rem;
+}
+main .addtional-info-section span:first-of-type {
+  margin-top: 1rem;
 }
 main .addtional-info-section span {
   display: block;
