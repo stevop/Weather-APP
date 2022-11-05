@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+    // MY VARIABLES:
     const inputPlace = document.getElementById("input-place");
     const btn = document.getElementById("btn");
     const h2 = document.querySelector("h2");
@@ -16,32 +17,28 @@ window.addEventListener("load", () => {
 
     // FETCHING DATA
     async function fetchData(city){
-        // najprv nájdem latitude a longitude:
+        // first i find latitude and longitude:
         const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=88e243d6b12dd013c3c5352a08400b75`);
         let lat = res.data[0].lat;
         let lon = res.data[0].lon;
         
-        // potom podľa nich nájdem mesto a vrátim ho do funkcie:
+        // then i find wanted city:
         const actualRes = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=sk&appid=88e243d6b12dd013c3c5352a08400b75&units=metric`);
         return actualRes.data;
     };
 
     // INPUT:
-    
-    // alert("2,5s")
     inputPlace.addEventListener("keypress", async (e) => {
         
         if(e.key === "Enter" && e.target.value !== ""){
             let placeInfo = await fetchData(e.target.value);
-            // console.log(placeInfo);
 
-            // Zmeny v html:
+            // CHANGES IN HTML:
 
-            // všeobecné info o počasí
+            // WEATHER DATA:
             descIcon.src = `https://openweathermap.org/img/wn/${placeInfo.weather["0"].icon}@2x.png`;
             descText.textContent = placeInfo.weather["0"].description;
 
-            // dáta o počasí:
             h2.textContent = `Počasie pre lokalitu ${placeInfo.name}`;
             h2.style.fontSize = "1.5rem";
             temp.textContent = `${placeInfo.main.temp}°C`;
@@ -52,7 +49,7 @@ window.addEventListener("load", () => {
             pressure.textContent = `Tlak vzduchu: ${placeInfo.main.pressure} hPa`;
             windSpeed.textContent = `Rýchosť vetra: ${placeInfo.wind.speed} km/h`;
             
-            // zrážky, ak sú dáta dostupné:
+            // RAIN OR SNOW, IF AVAILABLE:
             if(placeInfo.rain || placeInfo.snow){
                 rain.textContent = `Zrážky poslednú za hodinu: ${placeInfo.rain["1h"]} mm`;
                 snow.textContent = `Snehové zrážky za poslednú hodinu ${placeInfo.snow["1h"]}`;
@@ -81,13 +78,13 @@ window.addEventListener("load", () => {
         if(fetchData(inputPlace.value) !== ""){
             let placeInfo = await fetchData(inputPlace.value);
 
-            // Zmeny v html:
+            // HTML CHANGES
 
-            // všeobecné info o počasí
+            // WEATHER DATA
             descIcon.src = `https://openweathermap.org/img/wn/${placeInfo.weather["0"].icon}@2x.png`;
             descText.textContent = placeInfo.weather["0"].description;
 
-            // dáta o počasí:
+            
             h2.textContent = `Počasie pre lokalitu ${placeInfo.name}`;
             h2.style.fontSize = "1.5rem";
             temp.textContent = `${placeInfo.main.temp}°C`;
@@ -98,7 +95,7 @@ window.addEventListener("load", () => {
             pressure.textContent = `Tlak vzduchu: ${placeInfo.main.pressure} hPa`;
             windSpeed.textContent = `Rýchosť vetra: ${placeInfo.wind.speed} km/h`;
 
-            // zrážky, ak sú dáta dostupné:
+            // RAIN OR SNOW, IF AVAILABLE:
             if(placeInfo.rain || placeInfo.snow){
                 rain.textContent = `Zrážky poslednú hodinu: ${placeInfo.rain["1h"]} mm`;
                 snow.textContent = `Snehové zrážky za poslednú hodinu ${placeInfo.snow["1h"]}`;
