@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     };
 
     // INPUT:
-    inputPlace.addEventListener("keypress", async (e) => {
+    inputPlace.addEventListener("keydown", async (e) => {
         
         if(e.key === "Enter" && e.target.value !== ""){
             let placeInfo = await fetchData(e.target.value);
@@ -75,6 +75,7 @@ window.addEventListener("load", () => {
 
     // BUTTON
     btn.addEventListener("click", async (e) => {
+        e.preventDefault();
         if(fetchData(inputPlace.value) !== ""){
             let placeInfo = await fetchData(inputPlace.value);
 
